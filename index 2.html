@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Random Quote Generator</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class = "box" id = "boxy">
+                <h2>Quote</h2>
+                <blockquote id="quote">Loading...</blockquote>
+                <span id="author">Loading...</span>      
+                <div>
+                    <button class = "gen" onclick="getQuote(api_url)">Generate</button>
+                </div>
+                <div class = "buttons">
+                    <div id = "likes">
+                        <button id = "like" onclick="Like()">Fave</button>                    
+                    </div>
+                    <div id = "lists" onclick="changeVisibility()">
+                        <button id = "list">List</button>                    
+                    </div>
+                </div>
+        </div>
+        <div class = "listbox" id = "listboxy">
+            <h2>Favorites</h2>
+            <blockquote id="quote">Loading...</blockquote>
+            <span id="author">Loading...</span>      
+            <div class = "buttons">
+                <div id = "backers" onclick="changeVisibilityAgain()">
+                    <button id = "backer">Back</button>                    
+                </div>
+            </div>
+    </div>
+        <script>
+            const like = document.getElementById("like");
+            const quote = document.getElementById("quote");
+            const author = document.getElementById("author");
+            const data = document.getElementById("boxy");
+            const api_url = "https://quotes-api-self.vercel.app/quote";
+
+            async function getQuote(url) {
+                const response = await fetch(url);
+                var data = await response.json();
+                console.log(data);
+                quote.innerHTML = data.quote;
+                author.innerHTML = data.author;
+            }
+
+            getQuote(api_url);
+
+            function Like(){
+                if (like.innerHTML == "Faved!") {
+                    like.innerHTML = "Fave";
+                    like.style.color = "white";
+                } else {
+                    like.innerHTML = "Faved!";
+                    like.style.color = "navy";
+                }
+            }
+
+            function changeVisibility() {
+                document.getElementById("boxy").style.visibility = "hidden";
+            }
+
+            function changeVisibilityAgain() {
+                document.getElementById("boxy").style.visibility = "visible";
+            }
+            
+        </script>
+    </body> 
+</html>
