@@ -1,0 +1,147 @@
+body {
+    background: rgb(87,174,255);
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+}
+
+.box {
+    background: rgb(0,76,146);
+    width: 700px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    color: white;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
+.listbox {
+    background: rgb(0,76,146);
+    width: 500px;
+    position: static;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    transform: translate(-10%, -10%);
+    color: white;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
+.box h2 {
+    font-size: 32px;
+    margin-bottom: 50px;
+}
+
+.box h2::after {
+    content: '';
+    width: 75px;
+    height: 3px;
+    border-radius: 3px;
+    background: rgb(23,124,229);
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.box blockquote {
+    font-size: 25px;
+    min-height: 110px;
+}
+
+.box blockquote ::before, .box blockquote ::after {
+    content: '';
+}
+
+.box span {
+    display: block;
+    margin-top: 10px;
+    float: right;
+    position: relative;
+}
+
+.box span ::before {
+    content: '';
+    width: 20px;
+    height: 2px;
+    background: rgb(122, 171, 222);
+    position: absolute;
+    top: 50%;
+    left: -30px;
+}
+
+.box div {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.gen {
+    background: rgb(87,174,255);
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 25px;
+    border: 1px solid rgb(0,101,195);
+    width: 150px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    cursor: pointer;
+}
+
+#like, #likes {
+    background: rgb(87,174,255);
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 25px;
+    border: 1px solid rgb(0,101,195);
+    width: 75px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#list, #lists, #backers, #backer {
+    background: rgb(87,174,255);
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 25px;
+    border: 1px solid rgb(0,101,195);
+    width: 75px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.buttons {
+    display: flex;
+}
+
+.listbox, .back {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.listbox, .sthtoo {
+    cursor: pointer;
+    font-size: 20px;
+    position: absolute;
+    bottom: 15px;
+}
